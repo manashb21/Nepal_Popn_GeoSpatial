@@ -29,4 +29,6 @@ for index, row in popn_data.iterrows():
     else:
         popn_data.loc[index, 'Districts2'] = popn_data.loc[index]['Name']
         
-popn_data = popn_data
+popn_data = popn_data[['Districts2','Population']]
+
+popn_data.rename(columns = {'Districts2': 'Districts'}, inplace = True)
